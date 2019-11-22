@@ -1,0 +1,36 @@
+﻿@model WebBanXe.Models.HangXe
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>HangXe</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TenHangXe" class="control-label"></label>
+                <input asp-for="TenHangXe" class="form-control" />
+                <span asp-validation-for="TenHangXe" class="text-danger"></span>
+            </div>
+            <div >
+                <label asp-for="IMG"></label>
+                <input asp-for="IMG" type="file" />
+                @*<span asp-validation-for="TenHangXe" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@*@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@

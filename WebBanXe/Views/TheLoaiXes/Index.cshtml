@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebBanXe.Models.TheLoaiXe>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenTheLoaiXe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoaiXe)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTheLoaiXe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiXe.LoaiXeId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TheLoaiXeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TheLoaiXeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TheLoaiXeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
